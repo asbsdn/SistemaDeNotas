@@ -1,0 +1,78 @@
+
+        .banner{
+            background-color: #FFDB38; 
+         }
+         .footer{
+             background-color:#0F0F0F;
+         }
+         .cuerpo{
+             margin-bottom: 0rem;
+             margin-left: -2rem;;
+         }
+         .cuerpoInicioSesion{
+             margin-bottom: 5rem;
+         }
+         .form{
+             background-color: #E7DCDC;
+         }
+         .container{
+             padding: 1;
+         }
+         .form{
+             margin-top: 5rem;;
+         }
+         .btn-primary{
+  
+                text-decoration: none;
+                padding: px;
+                height: 2em;
+                width: 12rem;;
+                font-weight: 600;
+                font-size: 20px;
+                color: #0F0F0F;
+                background: #FFDB38;
+                border-radius: 6px;
+                margin-bottom: 2rem;
+                border: 0rem;
+              }
+
+        .bg-primary{
+        margin-left:0rem;
+        background-color: var(--primary) !important;
+        margin-left: var(--margin-left) !important;
+        color: black;
+        }
+       #menu.hover{
+            text-decoration: none;
+            color:#0F0F0F;
+        }
+        #sidebar-container{
+        min-height:150vh;
+        width: 40vh;
+        margin-top: 0rem;
+        color:#0F0F0F;
+
+        }
+    .H4{
+        color: #0F0F0F;
+    }
+        #sidebar-container .logo{
+        padding: .875rem;
+        color:#0F0F0F;
+        }    
+        #sidebar-container .menu{
+            margin-left: 0rem;
+        padding: 1rem;
+        color:#0F0F0F;
+    }
+    :root{
+    --primary: #E7DCDC;
+    --margin-left: 0rem;
+    }
+.linea{
+    border: 21px solid green;
+}
+.actividades{
+    background-color:#E7DCDC;
+}
+
