@@ -43,6 +43,19 @@ form {
   border: 0rem;
 }
 
+.bottom{
+
+  padding: 1rem 1rem;
+  margin-top: 1rem;
+  margin-left: .2rem;
+  font-size:  1.5rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  border-radius: .5rem;
+ 
+}
+
 .bg-primary {
   margin-left: 0rem;
   background-color: var(--primary) !important;
@@ -74,10 +87,47 @@ form {
 :root {
   --primary: #e7dcdc;
   --margin-left: 0rem;
+  --colorNav: #ffdb38;
 }
 .linea {
   border: 21px solid green;
 }
 .actividades {
   background-color: #e7dcdc;
+}
+
+.contenedor{
+  max-width: 120rem;
+  margin: 0 auto 0 auto;
+  /* text-align: center; */
+}
+
+.servicios{
+  display: grid;
+  grid-template-columns: 33.3% 33.3% 33.3%;
+  column-gap: 1rem;
+}
+
+.servicio{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  }
+  .sombra{
+    -webkit-box-shadow: inset 5px 5px 15px -6px rgba(201,193,201,0.53);
+    -moz-box-shadow: inset 5px 5px 15px -6px rgba(201,193,201,0.53);
+    box-shadow: inset 5px 5px 15px -6px rgba(201,193,201,0.53);
+    
+}
+
+.servicio .icono{
+  height: 10rem;
+  width: 10rem;
+  background-color: var(--colorNav);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
 }
