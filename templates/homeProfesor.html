@@ -30,28 +30,37 @@
              <div class="col-2 menubar">
                 <div class= "d-flex">
                     <div id="sidebar-container" class= "bg-primary">
-                         <div class="logo" mb-3><center>> <img src="../img/usuario.png"height="80" ></center>    
-                            <center><h4 class="text-light" >Hola usuario</h4></center> 
-                         </div>
-                         <div class="menu mb-5">
-                             <center>
-                            <a href="#" class="d-block  mb-4">Inicio</a>
-                            <a href="#" class="d-block  - p3 mb-4">Ver cursos</a>
-                            <a href="#" class="d-block  - p3 mb-4">Ver asignaturas</a>
-                            <a href="#" class="d-block  - p3 mb-4">Ver estudiantes</a>
-                            <a href="#" class="d-block  - p3 mb-4">Informacion</a>
-                        </center>
-                         </div>
-                         <center><button type="button" class="btn btn-warning mb-5">Cerrar sesion</button></center>
-
+                            <div class="logo" mb-3><center>    <img src="../img/usuario.png"height="80" ></center>    
+                                <center><h4 class="text-light" >Hola Profesor</h4></center> 
+                            </div>
+    
+                            <div class="menu mb-5 list-group ">
+                                
+                                <a href="#" class="list-group-item list-group-item-action enlaces">Inicio</a>
+                                <a href="#" class="list-group-item list-group-item-action enlaces">Ver cursos</a>
+                                <a href="#" class="list-group-item list-group-item-action enlaces">Información</a>
+                                
+                            </div>
+    
+                            <center><button type="button" class="btn btn-warning mb-5 color_fondo ">Cerrar sesion</button></center>
                     </div>
                 </div>
             </div>
         <!-- La columna centroCuerpo abarca el espacio entre el menubar y el calendario-actividades-->
 
             <div class="col-7 centroCuerpo"> <center><h2><br>Bienvenido al sistema de gestion de Notas  </h2> </center>
-                <div class="row">Cursos</div>
-                <div class="row">Ayuda</div>
+                <h4>Mis cursos</h4>
+                <div class="row"><div class="form-floating">
+                    <textarea class="form-control" rows="3"placeholder="Leave a comment here" id="textAreaCursosProfe"readonly="readonly" ></textarea>
+                    <label for="floatingTextarea"></label>
+                  </div></div>
+                 <h4>Mis asignaturas</h4> 
+                <div class="row">
+                    <div class="form-floating">
+                        <textarea class="form-control" placeholder="Leave a comment here" id="textAreaAsigProfe"readonly="readonly" ></textarea>
+                        <label for="floatingTextarea"></label>
+                      </div>
+                </div>
             </div>
         <!-- La columna actividades abarca el calendario y la lista de actividades-->
 
