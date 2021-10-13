@@ -48,6 +48,21 @@ form {
   margin-bottom: 1rem;
   border: 0rem;
 }
+.btn-estudiante {
+  text-decoration: none;
+  padding: px;
+  height: 2em;
+  width: 95%;
+  font-weight: 600;
+  font-size: 20px;
+  color: #0f0f0f;
+  background: #ffdb38;
+  border-radius: 6px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 0rem;
+}
+
 
 .bottom{
 
@@ -146,7 +161,7 @@ background-color: #ffdb38;
 
 .formulario{
   background-color:var(--primary);
-  width: min( 50rem, 100%); /* */
+  width: min( 40rem, 100%); /* */
   margin:  0 auto;
   padding: 2rem ;
   border-radius: 1rem;
@@ -222,3 +237,14 @@ background-color: #ffdb38;
     margin-bottom: .5rem;
     display: block;
     }
+
+    .contenedor-cursos{
+      background-color:var(--primary);
+      width: min( 40rem, 100%); /* */
+      margin:  0 auto;
+      padding: 2rem ;
+      border-radius: 1rem;
+      }
+.date{
+  width: 100%;
+}
