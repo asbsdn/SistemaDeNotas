@@ -36,11 +36,11 @@
                 ><center>Ingreso al sistema</center></label
               >
               <input
-                type="email"
+                type="text"
                 class="form-control"
                 id="exampleInputEmail1"
                 aria-describedby="emailHelp"
-                placeholder="E-mail" autocomplete="email"
+                placeholder="Código" autocomplete="email"
                 required
                 autofocus
               />
@@ -59,7 +59,18 @@
               />
             </div>
           </p>
-            <div><a href>Problemas para iniciar sesion</a></div>
+            <p style="font-weight: bold;">Rol: 
+              <select name="rol">
+
+                  <option value="1">Estudiante</option>
+                  
+                  <option value="2">Profesor</option>
+                  
+                  <option value="3">Admin</option>
+                  
+                  </select>
+          </p>
+            <div><a href>Recordar contraseña</a></div>
             <div class="mb-0 form-check"></div>
             <center>
               <button class="btn-primary" type="submit">Iniciar sesión</button>
@@ -83,7 +94,7 @@
             >
               <img src="../img/instagram.png" height="30" alt="" /></a
             ><a href="https://twitter.com/universidaduptc" target="_blank"
-              ><img src="./img/twitter.png" height="30" alt=""
+              ><img src="../img/twitter.png" height="30" alt=""
             /></a>
           </center>
         </div>
@@ -95,7 +106,7 @@
             </p>
           </center>
         </div>
-        <div class="col-3"><img src="img/uptc.png" height="100" alt="" /></div>
+        <div class="col-3"><img src="../img/uptc.png" height="100" alt="" /></div>
       </div>
     </div>
     <script src="../js/bootstrap.bundle.min.js"></script>

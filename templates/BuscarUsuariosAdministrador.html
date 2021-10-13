@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Información Admin</title>
+    <title>Buscar usuario</title>
     <!-- CSS Bootstrap-->
     <link rel="stylesheet" href="../static/bootstrap.min.css">
         <!-- CSS hecho por nosotros-->
@@ -60,15 +60,15 @@
                 <div class= "d-flex">
                     <div id="sidebar-container" class= "bg-primary">
                             <div class="logo" mb-3><center>    <img src="../img/usuario.png"height="80" ></center>    
-                                <center><h4 class="text-light" >Hola usuario</h4></center> 
+                                <center><h4 class="text-light">Buscar usuario</h4></center> 
                             </div>
 
                             <div class="menu mb-5 list-group ">
                                 
                                 <a href="#" class="list-group-item list-group-item-action enlaces">Inicio</a>
-                                <a href="#" class="list-group-item list-group-item-action enlaces">Buscar cursos</a>
+                                <a href="#" class="list-group-item list-group-item-action enlaces">Ver cursos</a>
                                 <a href="#" class="list-group-item list-group-item-action enlaces">Buscar usuario</a>
-                                <a href="#" class="list-group-item list-group-item-action enlaces">Buscar asignatura</a>
+                                <a href="#" class="list-group-item list-group-item-action enlaces">Ver asignatura</a>
                                 <a href="#" class="list-group-item list-group-item-action enlaces">Crear cursos</a>
                                 <a href="#" class="list-group-item list-group-item-action enlaces">Crear usuario</a>
                                 <a href="#" class="list-group-item list-group-item-action enlaces">Crear asignatura</a>
@@ -82,138 +82,150 @@
             </div>
         <!-- La columna centroCuerpo abarca el espacio entre el menubar y el calendario-actividades-->
             <div class="col-7 centroCuerpo"> 
-                <div class="row"><center><h2><br>Información Admistrador</h2> </center></div>
-                <div class="formulario">
-                    <form class="color_background" action="" method="get" name="formCovid" onsubmit="" > 
-                        <div class=" contenedor-campoInf">
-                        <div class="campo">
-                            <label> Nombres </label>
-                        <input
-                            type="text"
-                            name="name"
-                            id="name"
-                            autofocus
-                            required
-                            placeholder="Nombres"
-                        />
-                        </div>
+                <div class="row"><center><h2><br>Cursos</h2> </center></div>
 
-                        <div class="campo">
-                            <label> Apellidos</label>
-                            <input
-                            type="text"   
-                            name="Apellidos"
-                            id="Apellidos"
-                            required
-                            placeholder="Apellidos"
-                            />
-                        </div>
-
-                                                
-                        <div class="campo">
-                            <label> Tipo de documento</label>
-                            <select title="TipoDocmento"
-        
-                                <option value="1">CC</option>
-                                
-                                <option value="2">CE</option>
-                                
-                                <option value="3">TI</option>
-                                
-                                </select>
-                        </div>
-
-
-                        <div class="campo">
-                            <label> Numero de doc</label>
-                            <input
-                            type="number"   
-                            name="NumeroDocumento"
-                            id="NumeroDocumento"
-                            required
-                            placeholder="Numero de documento"
-                            />
-                        </div>
-
-                        <div class="campo_fechas" >
-                            <label> Fecha expedición</label>
-                            <input
-                            type="date"   
-                            name="FechaExpedicion"
-                            id="FechaExpedicion"
-                            required
-                            placeholder="Fecha de expedicion"
-                            />
-                        </div>
-
-                        <div class="campo_fechas" >
-                            <label> Fecha de nacimiento</label>
-                            <input
-                            type="date"   
-                            name="Fechanacimiento"
-                            id="FechaNaciomiento"
-                            required
-                            placeholder="Fecha de nacimiento"
-                            />
-                        </div>
-
-                        <div class="campo" >
-                            <label> Dirreción</label>
-                            <input
-                            type="text"   
-                            name="Dirrecion"
-                            id="Dirrecion"
-                            required
-                            placeholder="Dirrecion"
-                            />
-                        </div>
-
-                        <div class="campo">
-                            <label> Numero de telefono</label>
-                            <input
-                            type="tel"   
-                            name="NumeroTel"
-                            id="NumeroTel"
-                            required
-                            placeholder="Numero de telefono"
-                            />
-                        </div>
-
-                        <div class="campo">
-                            <label> Tipo de sangre</label>
-                            <input
-                            type="text"   
-                            name="TipoSangre"
-                            id="TipoSangre"
-                            required
-                            placeholder="Tipo de sangre"
-                            />
-                        </div>
-
-                        <div class="campo">
-                            <label>Estado civil</label>
-                            <input
-                            type="text"   
-                            name="EstadoCivil"
-                            id="EstadoCivil"
-                            required
-                            placeholder="EstadoCivil"
-                            />
-                        </div>
-
-                        <div class="campo">
-                            <label> Acerca de mí</label>
-                            <textarea class="input-text"> </textarea>
-                        </div>
-
-                       
-                            <button class="btn-primary" type="submit">Guardar</button>
-                            <button class="btn-primary" type="reset">Cancelar</button>
-                        
-                    </div>
-                </form>
+                <main class="contenedor">
+                    <div class="servicios">
                 
+                <div class="card" aria-hidden="true" style="width: 90%;" >
+                  <img src="../img/icono_curso_.png" class="card-img-top" alt="100px">
+                  <div class="card-body">
+                     <center><h5 class="card-title ">
+                        curso x
+                    </h5> 
+                    <p class="card-text">
+                        numero de integrantes: x
+                    </p>
+                    </center>
+                    <a href="#" class="btn btn-primary">Entrar al curso</a>
+                  </div>
                 </div>
+                <!-- Esta es la division  -->
+                <div class="card" aria-hidden="true" style="width: 90%;" >
+                    <img src="../img/icono_curso_.png" class="card-img-top" alt="100px">
+                    <div class="card-body">
+                       <center><h5 class="card-title ">
+                          curso x
+                      </h5> 
+                      <p class="card-text">
+                          numero de integrantes: x
+                      </p>
+                      </center>
+                      <a href="#" class="btn btn-primary">Entrar al curso</a>
+                    </div>
+                  </div>
+                
+                  <div class="card" aria-hidden="true" style="width: 90%;" >
+                    <img src="../img/icono_curso_.png" class="card-img-top" alt="100px">
+                    <div class="card-body">
+                       <center><h5 class="card-title ">
+                          curso x
+                      </h5> 
+                      <p class="card-text">
+                          numero de integrantes: x
+                      </p>
+                      </center>
+                      <a href="#" class="btn btn-primary">Entrar al curso</a>
+                    </div>
+                  </div>
+
+                  <div class="card" aria-hidden="true" style="width: 90%;" >
+                    <img src="../img/icono_curso_.png" class="card-img-top" alt="100px">
+                    <div class="card-body">
+                       <center><h5 class="card-title ">
+                          curso x
+                      </h5> 
+                      <p class="card-text">
+                          numero de integrantes: x
+                      </p>
+                      </center>
+                      <a href="#" class="btn btn-primary">Entrar al curso</a>
+                    </div>
+                  </div>
+
+                  <div class="card" aria-hidden="true" style="width: 90%;" >
+                    <img src="../img/icono_curso_.png" class="card-img-top" alt="100px">
+                    <div class="card-body">
+                       <center><h5 class="card-title ">
+                          curso x
+                      </h5> 
+                      <p class="card-text">
+                          numero de integrantes: x
+                      </p>
+                      </center>
+                      <a href="#" class="btn btn-primary">Entrar al curso</a>
+                    </div>
+                  </div>
+                  <div class="card" aria-hidden="true" style="width: 90%;" >
+                    <img src="../img/icono_curso_.png" class="card-img-top" alt="100px">
+                    <div class="card-body">
+                       <center><h5 class="card-title ">
+                          curso x
+                      </h5> 
+                      <p class="card-text">
+                          numero de integrantes: x
+                      </p>
+                      </center>
+                      <a href="#" class="btn btn-primary">Entrar al curso</a>
+                    </div>
+                  </div>
+
+                                  <div class="card" aria-hidden="true" style="width: 90%;" >
+                  <img src="../img/icono_curso_.png" class="card-img-top" alt="100px">
+                  <div class="card-body">
+                     <center><h5 class="card-title ">
+                        curso x
+                    </h5> 
+                    <p class="card-text">
+                        numero de integrantes: x
+                    </p>
+                    </center>
+                    <a href="#" class="btn btn-primary">Entrar al curso</a>
+                  </div>
+                </div>
+                
+                <div class="card" aria-hidden="true" style="width: 90%;" >
+                    <img src="../img/icono_curso_.png" class="card-img-top" alt="100px">
+                    <div class="card-body">
+                       <center><h5 class="card-title ">
+                          curso x
+                      </h5> 
+                      <p class="card-text">
+                          numero de integrantes: x
+                      </p>
+                      </center>
+                      <a href="#" class="btn btn-primary">Entrar al curso</a>
+                    </div>
+                  </div>
+
+
+                 <div class="card" aria-hidden="true" style="width: 90%;" >
+                  <img src="../img/icono_curso_.png" class="card-img-top" alt="100px">
+                  <div class="card-body">
+                     <center><h5 class="card-title ">
+                        curso x
+                    </h5> 
+                    <p class="card-text">
+                        numero de integrantes: x
+                    </p>
+                    </center>
+                    <a href="#" class="btn btn-primary">Entrar al curso</a>
+                  </div>
+                </div>
+                
+                  <!-- MIra -->
+                    </div>
+                
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination">
+                      <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                      <li class="page-item"><a class="page-link" href="#">1</a></li>
+                      <li class="page-item"><a class="page-link" href="#">2</a></li>
+                      <li class="page-item"><a class="page-link" href="#">3</a></li>
+                      <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                    </ul>
+                  </nav>
+                
             </div>
             <!-- Final de cuerpo central -->
             <!-- La columna actividades abarca el calendario y la lista de actividades-->    

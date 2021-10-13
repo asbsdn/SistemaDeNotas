@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Información Admin</title>
+    <title>Ver cursos</title>
     <!-- CSS Bootstrap-->
     <link rel="stylesheet" href="../static/bootstrap.min.css">
         <!-- CSS hecho por nosotros-->
@@ -82,139 +81,90 @@
             </div>
         <!-- La columna centroCuerpo abarca el espacio entre el menubar y el calendario-actividades-->
             <div class="col-7 centroCuerpo"> 
-                <div class="row"><center><h2><br>Información Admistrador</h2> </center></div>
-                <div class="formulario">
-                    <form class="color_background" action="" method="get" name="formCovid" onsubmit="" > 
-                        <div class=" contenedor-campoInf">
-                        <div class="campo">
-                            <label> Nombres </label>
-                        <input
-                            type="text"
-                            name="name"
-                            id="name"
-                            autofocus
-                            required
-                            placeholder="Nombres"
-                        />
+                <div class="row"><center><h2><br>Buscar cursos</h2> </center></div>
+
+                <main class="contenedor">
+                    
+                    <input type="text" id="formulario" class="form-control my-2" autofocus>
+                    <button class ="btn btn-info mb-2" id="boton" >Buscar</button> 
+                    <ul id="resultado">
+                        <div class="servicios">
+                    
+                            <div class="card" aria-hidden="true" style="width: 90%;" >
+                                <img src="../img/icono_curso_.png" class="card-img-top" alt="100px">
+                                <div class="card-body">
+                                   <center><h5 class="card-title ">
+                                      
+                                  </h5> 
+                                  <p class="card-text">
+                                      
+                                  </p>
+                                  </center>
+                                  <a href="#" class="btn btn-primary">Ver información</a>
+                                </div>
+                              </div>
+
+                                <div class="card" aria-hidden="true" style="width: 90%;" >
+                                    <img src="../img/icono_curso_.png" class="card-img-top" alt="100px">
+                                    <div class="card-body">
+                                       <center><h5 class="card-title ">
+                                          
+                                      </h5> 
+                                      <p class="card-text">
+                                          
+                                      </p>
+                                      </center>
+                                      <a href="#" class="btn btn-primary">Ver información</a>
+                                    </div>
+                                  </div>
+
+                                    <div class="card" aria-hidden="true" style="width: 90%;" >
+                                        <img src="../img/icono_curso_.png" class="card-img-top" alt="100px">
+                                        <div class="card-body">
+                                           <center><h5 class="card-title ">
+                                              
+                                          </h5> 
+                                          <p class="card-text">
+                                              
+                                          </p>
+                                          </center>
+                                          <a href="#" class="btn btn-primary">ver información</a>
+                                        </div>
+                                      </div>
+
+                                        <div class="card" aria-hidden="true" style="width: 90%;" >
+                                            <img src="../img/icono_curso_.png" class="card-img-top" alt="100px">
+                                            <div class="card-body">
+                                               <center><h5 class="card-title ">
+                                                  
+                                              </h5> 
+                                              <p class="card-text">
+                                                  
+                                              </p>
+                                              </center>
+                                              <a href="#" class="btn btn-primary">ver información</a>
+                                            </div>
+                                          </div>
+
+                            
+                            <div class="card" aria-hidden="true" style="width: 90%;" >
+                                <img src="../img/icono_curso_.png" class="card-img-top" alt="100px">
+                                <div class="card-body">
+                                   <center><h5 class="card-title ">
+                                      
+                                  </h5> 
+                                  <p class="card-text">
+                                      
+                                  </p>
+                                  </center>
+                                  <a href="#" class="btn btn-primary">ver información</a>
+                                </div>
+                              </div>
                         </div>
-
-                        <div class="campo">
-                            <label> Apellidos</label>
-                            <input
-                            type="text"   
-                            name="Apellidos"
-                            id="Apellidos"
-                            required
-                            placeholder="Apellidos"
-                            />
-                        </div>
-
-                                                
-                        <div class="campo">
-                            <label> Tipo de documento</label>
-                            <select title="TipoDocmento"
-        
-                                <option value="1">CC</option>
-                                
-                                <option value="2">CE</option>
-                                
-                                <option value="3">TI</option>
-                                
-                                </select>
-                        </div>
-
-
-                        <div class="campo">
-                            <label> Numero de doc</label>
-                            <input
-                            type="number"   
-                            name="NumeroDocumento"
-                            id="NumeroDocumento"
-                            required
-                            placeholder="Numero de documento"
-                            />
-                        </div>
-
-                        <div class="campo_fechas" >
-                            <label> Fecha expedición</label>
-                            <input
-                            type="date"   
-                            name="FechaExpedicion"
-                            id="FechaExpedicion"
-                            required
-                            placeholder="Fecha de expedicion"
-                            />
-                        </div>
-
-                        <div class="campo_fechas" >
-                            <label> Fecha de nacimiento</label>
-                            <input
-                            type="date"   
-                            name="Fechanacimiento"
-                            id="FechaNaciomiento"
-                            required
-                            placeholder="Fecha de nacimiento"
-                            />
-                        </div>
-
-                        <div class="campo" >
-                            <label> Dirreción</label>
-                            <input
-                            type="text"   
-                            name="Dirrecion"
-                            id="Dirrecion"
-                            required
-                            placeholder="Dirrecion"
-                            />
-                        </div>
-
-                        <div class="campo">
-                            <label> Numero de telefono</label>
-                            <input
-                            type="tel"   
-                            name="NumeroTel"
-                            id="NumeroTel"
-                            required
-                            placeholder="Numero de telefono"
-                            />
-                        </div>
-
-                        <div class="campo">
-                            <label> Tipo de sangre</label>
-                            <input
-                            type="text"   
-                            name="TipoSangre"
-                            id="TipoSangre"
-                            required
-                            placeholder="Tipo de sangre"
-                            />
-                        </div>
-
-                        <div class="campo">
-                            <label>Estado civil</label>
-                            <input
-                            type="text"   
-                            name="EstadoCivil"
-                            id="EstadoCivil"
-                            required
-                            placeholder="EstadoCivil"
-                            />
-                        </div>
-
-                        <div class="campo">
-                            <label> Acerca de mí</label>
-                            <textarea class="input-text"> </textarea>
-                        </div>
-
-                       
-                            <button class="btn-primary" type="submit">Guardar</button>
-                            <button class="btn-primary" type="reset">Cancelar</button>
-                        
-                    </div>
-                </form>
+                    </ul>
                 
-                </div>
-            </div>
+           
+        </div>
             <!-- Final de cuerpo central -->
             <!-- La columna actividades abarca el calendario y la lista de actividades-->    
             <div class="col-3 actividades">
@@ -242,6 +192,61 @@
     </div>
     <script src="../js/bootstrap.bundle.min.js"></script>
 
-</body>
+    <script > 
 
+    const productos = [
+        {carrera: 'Ing.mecanica'},
+        {carrera: 'Derecho'},
+        {carrera: 'Ing.industrial'},
+        {carrera: 'Matematicas'},
+        {carrera: 'Finanzas'},
+        {carrera: 'Administracion'},
+
+    ]
+    const formulario = document.querySelector('#formulario');
+    const boton = document.querySelector('#boton');
+    const resultado = document.querySelector('#resultado')
+
+    const filtrar = ()=>{
+        resultado.innerHTML ="";
+        // console.log(formulario.value);
+        const texto = formulario.value.toLowerCase();
+
+        for (let producto of productos) {
+            const nombre = producto.carrera.toLowerCase();
+            if (nombre.indexOf(texto) !== -1){
+                resultado.innerHTML +=`                 
+                <div class="servicios">
+                            <div class="card" aria-hidden="true" style="width: 90%;" >
+                                <img src="../img/icono_curso_.png" class="card-img-top" alt="100px">
+                                <div class="card-body">
+                                   <center><h5 class="card-title ">
+                                    ${producto.carrera}
+                                  </h5> 
+                                  <p class="card-text">
+                                    Carrera: ${producto.carrera}  
+                                  </p>
+                                  </center>
+                                  <a href="#" class="btn btn-primary">ver información</a>
+                                </div>
+                              </div>
+                            </div>`
+                
+   
+
+               
+            }
+        }
+
+        if(resultado.innerHTML === ''){
+            resultado.innerHTML += ` <li> Curso no encontrado </li>`
+        }
+    }
+
+    boton.addEventListener('click', filtrar);
+    formulario.addEventListener("keyup" , filtrar);
+    filtrar();  
+    </script>
+
+</body>
 </html>
