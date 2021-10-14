@@ -8,7 +8,7 @@ if defined _OLD_CODEPAGE (
     "%SystemRoot%\System32\chcp.com" 65001 > nul
 )
 
-set VIRTUAL_ENV=C:\Users\aleja\Documents\MisionTic\Ciclo3\SPRINGS\RepositorioSistemaDeNotasV5\SistemaDeNotas\env
+set VIRTUAL_ENV=C:\Users\Usuario\Desktop\SistemaDeNotas\env
 
 if not defined PROMPT set PROMPT=$P$G
 

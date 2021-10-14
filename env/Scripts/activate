@@ -38,7 +38,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="C:\Users\aleja\Documents\MisionTic\Ciclo3\SPRINGS\RepositorioSistemaDeNotasV5\SistemaDeNotas\env"
+VIRTUAL_ENV="C:\Users\Usuario\Desktop\SistemaDeNotas\env"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
