@@ -1,5 +1,5 @@
-from types import MethodType
 from flask import Flask
+from flask import render_template as render
 
 app = Flask(__name__)
 
@@ -8,19 +8,19 @@ lista_users = ["Juan", "Pablo", "Juliana", "Felipe"]
 @app.route("/", methods=['GET', 'POST'])
 def inicio():
     #Pagina index para inciar sesión
-    return "Pagina index"
+    return render("index.html")
 
 @app.route('/registro', methods=['GET', 'POST'])
 def registro():
-    return "pagina de registro de user"
+    return render("registro.html")
 
-@app.route('/recordar_pass', methods=['GET'])
+@app.route('/recordarPass', methods=['GET'])
 def recordar_pass():
-    return "Pagina recordar contraseña de usuario"
+    return render("recordarPass.html")
 
 @app.route('/perfil', methods=['GET'])
 def perfil():
-    return "pagina de perfil de ususario"
+    return render("dashboard.html")
 
 @app.route('/dashboard/<id_usuario>', methods=['GET', 'POST'])
 def usuario(id_usuario):
@@ -31,7 +31,7 @@ def usuario(id_usuario):
 
 @app.route('/editar', methods=['GET', 'POST'])
 def editar():
-    return "Pagina editar info -ADMIN-"
+    return render("informacionEstudiante.html")
 
 @app.route('/MisCursos', methods=['GET'])
 def cursos(id_usuario):
