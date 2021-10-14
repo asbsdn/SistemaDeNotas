@@ -9,7 +9,6 @@ lista_users = ["Juan", "Pablo", "Juliana", "Felipe"]
 #ADMINISTRAD0R
 @app.route("/dashboard", methods=['GET', 'POST'])
 def dashboard():
-    #Pagina index para inciar sesión
     return render("dashboard.html")
 
 @app.route('/registro', methods=['GET', 'POST'])
@@ -18,38 +17,47 @@ def registro():
 
 @app.route("/BuscarCursosAdministrador", methods=['GET', 'POST'])
 def BuscarCursosAdministrador():
-    #Pagina index para inciar sesión
     return render("BuscarCursosAdministrador.html")
 
 
 @app.route("/BuscarUsuarioAdministrador", methods=['GET', 'POST'])
 def BuscarUsuarioAdministrador():
-    #Pagina index para inciar sesión
     return render("BuscarUsuario.html")
 
 
 @app.route("/BuscarAsignaturaAdministrador", methods=['GET', 'POST'])
 def BuscarAsignaturaAdministrador():
-    #Pagina index para inciar sesión
     return render("BuscarAsignaturasAdministrador.html")
 
 
 @app.route("/crearCursos", methods=['GET', 'POST'])
 def crearCursos():
-    #Pagina index para inciar sesión
     return render("crearCursos.html")
 
 
 @app.route("/crearAsignatura", methods=['GET', 'POST'])
 def crearAsignatura():
-    #Pagina index para inciar sesión
     return render("crearAsignatura.html")
 
 
 @app.route("/informacionAdministrador", methods=['GET', 'POST'])
 def informacionAdministrador():
-    #Pagina index para inciar sesión
     return render("informacionAdministrador.html")
+
+#PAGINAS DE PROFESOR----------------------------------------------------------------------------------
+
+@app.route("/homeProfesor", methods=['GET', 'POST'])
+def homeProfesor():
+    return render("homeProfesor.html")
+
+@app.route("/misCursosProfesor", methods=['GET', 'POST'])
+def misCursosProfesor():
+    return render("misCursosProfesor.html")
+
+@app.route("/informacionProfesor", methods=['GET', 'POST'])
+def informacionProfesor():
+    return render("informacionProfesor.html")
+
 
 @app.route('/recordarPass', methods=['GET'])
 def recordar_pass():
