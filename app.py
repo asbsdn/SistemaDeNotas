@@ -58,6 +58,23 @@ def misCursosProfesor():
 def informacionProfesor():
     return render("informacionProfesor.html")
 
+#PAGINAS DE Estudiante----------------------------------------------------------------------------------
+
+@app.route("/homeEstudiante", methods=['GET', 'POST'])
+def homeEstudiante():
+    return render("homeEstudiante.html")
+
+@app.route("/registroAsignatura", methods=['GET', 'POST'])
+def registroAsignatura():
+    return render("registroAsignatura.html")
+
+@app.route("/verNotasEstudiante", methods=['GET', 'POST'])
+def verNotasEstudiante():
+    return render("verNotasEstudiante.html")
+
+@app.route("/informacionEstudiante", methods=['GET', 'POST'])
+def informacionEstudiante():
+    return render("informacionEstudiante.html")
 
 @app.route('/recordarPass', methods=['GET'])
 def recordar_pass():
