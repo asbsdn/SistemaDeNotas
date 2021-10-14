@@ -76,6 +76,11 @@ def verNotasEstudiante():
 def informacionEstudiante():
     return render("informacionEstudiante.html")
 
+@app.route("/cursoEstudiante", methods=['GET', 'POST'])
+def cursoEstudiante():
+    return render("cursoEstudiante.html")
+
+
 @app.route('/recordarPass', methods=['GET'])
 def recordar_pass():
     return render("recordarPass.html")
