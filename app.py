@@ -1,9 +1,32 @@
 from flask import Flask
 from flask import render_template as render
+from flask import redirect
 
 app = Flask(__name__)
 
-lista_users = ["Juan", "Pablo", "Juliana", "Felipe"]
+sesion_iniciada = False;
+
+@app.route("/", methods=['GET', 'POST'])
+def inicio():
+    #Pagina index para inciar sesión
+    return render("index.html")
+
+@app.route('/recordarPass', methods=['GET'])
+def recordar_pass():
+    return render("recordarPass.html")
+
+@app.route('/registro', methods=['GET', 'POST'])
+def registro():
+    return render("registro.html")
+
+@app.route('/dashboard/<rol_usuario>', methods=['GET', 'POST'])
+def usuario(rol_usuario):
+    if rol_usuario == "estudiante":
+        return render("homeEstudiante.html")
+    elif rol_usuario == "profesor":
+        return render("homeProfesor.html")
+    elif rol_usuario == "admin":
+        return render("dashboard.html")
 
 
 #ADMINISTRAD0R
