@@ -5,14 +5,51 @@ app = Flask(__name__)
 
 lista_users = ["Juan", "Pablo", "Juliana", "Felipe"]
 
-@app.route("/", methods=['GET', 'POST'])
-def inicio():
+
+#ADMINISTRAD0R
+@app.route("/dashboard", methods=['GET', 'POST'])
+def dashboard():
     #Pagina index para inciar sesión
-    return render("index.html")
+    return render("dashboard.html")
 
 @app.route('/registro', methods=['GET', 'POST'])
 def registro():
     return render("registro.html")
+
+@app.route("/BuscarCursosAdministrador", methods=['GET', 'POST'])
+def BuscarCursosAdministrador():
+    #Pagina index para inciar sesión
+    return render("BuscarCursosAdministrador.html")
+
+
+@app.route("/BuscarUsuarioAdministrador", methods=['GET', 'POST'])
+def BuscarUsuarioAdministrador():
+    #Pagina index para inciar sesión
+    return render("BuscarUsuario.html")
+
+
+@app.route("/BuscarAsignaturaAdministrador", methods=['GET', 'POST'])
+def BuscarAsignaturaAdministrador():
+    #Pagina index para inciar sesión
+    return render("BuscarAsignaturasAdministrador.html")
+
+
+@app.route("/crearCursos", methods=['GET', 'POST'])
+def crearCursos():
+    #Pagina index para inciar sesión
+    return render("crearCursos.html")
+
+
+@app.route("/crearAsignatura", methods=['GET', 'POST'])
+def crearAsignatura():
+    #Pagina index para inciar sesión
+    return render("crearAsignatura.html")
+
+
+@app.route("/informacionAdministrador", methods=['GET', 'POST'])
+def informacionAdministrador():
+    #Pagina index para inciar sesión
+    return render("informacionAdministrador.html")
 
 @app.route('/recordarPass', methods=['GET'])
 def recordar_pass():

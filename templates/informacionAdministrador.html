@@ -18,63 +18,63 @@
 </head>
 
 <body>
-    <!-- Container-xxl es el contenedor principal-->
-    <div class="container-xxl">
-<!-- dividimos la pagina en filas (row) y columnas (col)-->
-    <!-- La fila row banner tiene una sola columna la cual es la cabezera(banner)-->
-        <!-- Cada ancho de fila se divide en 12 grid(col-12) por lo cual a cada columna de cada fila se le asigna un col-numero-->
-          <!-- Header personalizado -->
-            <header class="p-2 border-bottom row banner ">
-                <div class="container">
-                  <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-                    <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
-                        <img src="../img/uptc.png" alt="100" width="150">
-                    </a>
-            
-            
-            
-                    <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 color_fondo">
-                      <input type="search" class="form-control" placeholder="Buscar..." aria-label="Search">
-                    </form>
-            
-                    <div class="dropdown text-end">
-                      <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="../img/usuario.png" alt="mdo" width="32" height="32" class="rounded-circle">
-                      </a>
-                      <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
-                        <li><a class="dropdown-item" href="#">New project...</a></li>
-                        <li><a class="dropdown-item" href="#">Settings</a></li>
-                        <li><a class="dropdown-item" href="#">Profile</a></li>
-                        <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="#">Sign out</a></li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </header>
-
-        <!-- La fila row cuerpo abarca todo el cuerpo de la pagina debado del banner y encima del pie de pagina(footer)-->
-        <div class="row cuerpo">
-        <!-- La columna menubar tiene tamaño 2 y en ella se va a ubicar el menu tipo sidebar a la izquierda-->
-             <div class="col-2 menubar">
-                <div class= "d-flex">
-                    <div id="sidebar-container" class= "bg-primary">
-                            <div class="logo" mb-3><center>    <img src="../img/usuario.png"height="80" ></center>    
-                                <center><h4 class="text-light" >Hola usuario</h4></center> 
+     <!-- Container-xxl es el contenedor principal-->
+     <div class="container-xxl">
+        <!-- dividimos la pagina en filas (row) y columnas (col)-->
+            <!-- La fila row banner tiene una sola columna la cual es la cabezera(banner)-->
+                <!-- Cada ancho de fila se divide en 12 grid(col-12) por lo cual a cada columna de cada fila se le asigna un col-numero-->
+                  <!-- Header personalizado -->
+                    <header class="p-2 border-bottom row banner ">
+                        <div class="container">
+                          <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                            <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
+                                <img src="/static/images/uptc.png" alt="100" width="150">
+                            </a>
+                    
+                    
+                    
+                            <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 color_fondo">
+                              <input type="search" class="form-control" placeholder="Buscar..." aria-label="Search">
+                            </form>
+                    
+                            <div class="dropdown text-end">
+                              <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                                <img src="/static/images/usuario.png" alt="mdo" width="32" height="32" class="rounded-circle">
+                              </a>
+                              <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
+                                <li><a class="dropdown-item" href="#">New project...</a></li>
+                                <li><a class="dropdown-item" href="#">Settings</a></li>
+                                <li><a class="dropdown-item" href="#">Profile</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#">Sign out</a></li>
+                              </ul>
                             </div>
-
-                            <div class="menu mb-5 list-group ">
-                                
-                                <a href="#" class="list-group-item list-group-item-action enlaces">Inicio</a>
-                                <a href="#" class="list-group-item list-group-item-action enlaces">Buscar cursos</a>
-                                <a href="#" class="list-group-item list-group-item-action enlaces">Buscar usuario</a>
-                                <a href="#" class="list-group-item list-group-item-action enlaces">Buscar asignatura</a>
-                                <a href="#" class="list-group-item list-group-item-action enlaces">Crear cursos</a>
-                                <a href="#" class="list-group-item list-group-item-action enlaces">Crear usuario</a>
-                                <a href="#" class="list-group-item list-group-item-action enlaces">Crear asignatura</a>
-                                <a href="#" class="list-group-item list-group-item-action enlaces">Información</a>
-                                
-                            </div>
+                          </div>
+                        </div>
+                      </header>
+        
+                <!-- La fila row cuerpo abarca todo el cuerpo de la pagina debado del banner y encima del pie de pagina(footer)-->
+                <div class="row cuerpo">
+                <!-- La columna menubar tiene tamaño 2 y en ella se va a ubicar el menu tipo sidebar a la izquierda-->
+                     <div class="col-2 menubar">
+                        <div class= "d-flex">
+                            <div id="sidebar-container" class= "bg-primary">
+                                    <div class="logo" mb-3><center>    <img src="/static/images/usuario.png"height="80" ></center>    
+                                        <center><h4 class="text-light" >Hola usuario</h4></center> 
+                                    </div>
+        
+                                    <div class="menu mb-5 list-group ">
+                                        
+                                        <a href="\dashboard" class="list-group-item list-group-item-action enlaces">Inicio</a>
+                                        <a href="\BuscarCursosAdministrador" class="list-group-item list-group-item-action enlaces">Buscar cursos</a>
+                                        <a href="\BuscarUsuarioAdministrador" class="list-group-item list-group-item-action enlaces">Buscar usuario</a>
+                                        <a href="\BuscarAsignaturaAdministrador" class="list-group-item list-group-item-action enlaces">Buscar asignatura</a>
+                                        <a href="crearCursos" class="list-group-item list-group-item-action enlaces">Crear cursos</a>
+                                        <a href="registro" class="list-group-item list-group-item-action enlaces">Crear usuario</a>
+                                        <a href="crearAsignatura" class="list-group-item list-group-item-action enlaces">Crear asignatura</a>
+                                        <a href="informacionAdministrador" class="list-group-item list-group-item-action enlaces">Información</a>
+                                        
+                                    </div>
 
                             <center><button type="button" class="btn btn-warning mb-5 color_fondo ">Cerrar sesion</button></center>
                     </div>
