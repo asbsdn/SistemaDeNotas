@@ -5,8 +5,11 @@ app = Flask(__name__)
 
 lista_users = ["Juan", "Pablo", "Juliana", "Felipe"]
 
+@app.route("/", methods=['GET', 'POST'])
+def inicio():
+    return render("index.html")
 
-#ADMINISTRAD0R
+#ADMINISTRAD0R----------------------------------------------------------------------------------------------
 @app.route("/dashboard", methods=['GET', 'POST'])
 def dashboard():
     return render("dashboard.html")
@@ -44,7 +47,7 @@ def crearAsignatura():
 def informacionAdministrador():
     return render("informacionAdministrador.html")
 
-#PAGINAS DE PROFESOR----------------------------------------------------------------------------------
+#PAGINAS DE PROFESOR-------------------------------------------------------------------------------------
 
 @app.route("/homeProfesor", methods=['GET', 'POST'])
 def homeProfesor():
@@ -57,6 +60,14 @@ def misCursosProfesor():
 @app.route("/informacionProfesor", methods=['GET', 'POST'])
 def informacionProfesor():
     return render("informacionProfesor.html")
+
+@app.route("/cursoProfesor", methods=['GET', 'POST'])
+def cursoProfesor():
+    return render("cursoProfesor.html")
+
+@app.route("/detalleActividadProfesor", methods=['GET', 'POST'])
+def detalleActividadProfesor():
+    return render("detalleActividadProfesor.html")
 
 #PAGINAS DE Estudiante----------------------------------------------------------------------------------
 
@@ -80,6 +91,15 @@ def informacionEstudiante():
 def cursoEstudiante():
     return render("cursoEstudiante.html")
 
+@app.route("/detalleActividadEstudiante", methods=['GET', 'POST'])
+def detalleActividadEstudiante():
+    return render("detalleActividadEstudiante.html")
+
+@app.route("/retroalimentacionEstudiante", methods=['GET', 'POST'])
+def dretroalimentacionEstudiante():
+    return render("retroalimentacionEstudiante.html")
+
+#----------------------------------------------------------------------------------------------------------
 
 @app.route('/recordarPass', methods=['GET'])
 def recordar_pass():
