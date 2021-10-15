@@ -15,9 +15,7 @@ def inicio():
 def recordar_pass():
     return render("recordarPass.html")
 
-@app.route('/registro', methods=['GET', 'POST'])
-def registro():
-    return render("registro.html")
+
 
 @app.route('/dashboard/<rol_usuario>', methods=['GET', 'POST'])
 def usuario(rol_usuario):
@@ -28,9 +26,7 @@ def usuario(rol_usuario):
     elif rol_usuario == "admin":
         return render("dashboard.html")
 
-@app.route("/", methods=['GET', 'POST'])
-def inicio():
-    return render("index.html")
+
 
 #ADMINISTRAD0R----------------------------------------------------------------------------------------------
 @app.route("/dashboard", methods=['GET', 'POST'])
@@ -124,20 +120,13 @@ def dretroalimentacionEstudiante():
 
 #----------------------------------------------------------------------------------------------------------
 
-@app.route('/recordarPass', methods=['GET'])
-def recordar_pass():
-    return render("recordarPass.html")
+
 
 @app.route('/perfil', methods=['GET'])
 def perfil():
     return render("dashboard.html")
 
-@app.route('/dashboard/<id_usuario>', methods=['GET', 'POST'])
-def usuario(id_usuario):
-    if id_usuario in lista_users:
-        return f"DashBoard Perfil de usuario: {id_usuario}"
-    else:
-        return f"Error el usuario {id_usuario} no existe"
+
 
 @app.route('/editar', methods=['GET', 'POST'])
 def editar():
