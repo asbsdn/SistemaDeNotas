@@ -30,7 +30,7 @@
         <!-- Se le agrega un tamaño a la columna col-6 form para que está quede en el medio y centrada-->
         <div class="col-6 form">
           <br>
-          <form>
+          <form  method="post" action="\login">
             <div class="s">
               <label for="exampleInputEmail1" class="form-label" 
                 ><center>Ingreso al sistema</center></label
@@ -38,6 +38,7 @@
               <input
                 type="text"
                 class="form-control"
+                name="codigo"
                 id="exampleInputEmail1"
                 aria-describedby="emailHelp"
                 placeholder="Código" autocomplete="email"
@@ -53,6 +54,7 @@
               <input
                 type="password"
                 class="form-control"
+                name="password"
                 id="exampleInputPassword1"
                 placeholder="Contraseña"
                 required
