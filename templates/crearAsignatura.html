@@ -88,15 +88,15 @@
                       
                         <center><h4><br/>Complete todos los campos para crear la asignatura</h4> </center>
                      
-                        <form action="" method="get" name="formCovid" onsubmit="" class="formulario">  
+                        <form action="{{ url_for('registro_asignatura')}}"method="post" name="CrearAsignatura"  class="formulario">  
                         <div class="contenedor-campo">
                         <div class="campo">
                             <label> Nombre del la asignatura </label>
                           <input
                             type="text"
                             size="35"
-                            name="name"
-                            id="name"
+                            name="nombre_asignatura"
+                            id="nombre_asignatura"
                             autofocus
                             minlength="3"
                             maxlength="30"
@@ -109,8 +109,8 @@
                             <label> Codigo de la asignatura </label>
                             <input
                             type="number"   
-                            name="CodigoCurso"
-                            id="CodigoCurso"
+                            name="CodigoAsignatura"
+                            id="CodigoAsignatura"
                             required
                             placeholder="Codigo del curso"
                             />
@@ -130,7 +130,7 @@
 
                         <div class="campo">
                             <label> Detalle de la asignatura </label>
-                            <textarea class="input-text" name="DetalleAsignatura                             name="DetalleAsignatura"
+                            <textarea class="input-text" name="DetalleAsignatura"                             
                             id="DetalleAsignatura"
                             required
                             placeholder="Detalle de la Asignatura"  > </textarea>
@@ -141,6 +141,16 @@
                             <button class="btn-primary" type="submit">Crear usuario</button>
                             <button class="btn-primary" type="reset">Cancelar</button>
                         </center>
+
+                        {%with messages = get_flashed_messages() %}
+                        {% if messages%}
+                        {% for message in messages %}
+                        <p>
+                          {{message}}
+                        </p>
+                        {% endfor%}
+                        {% endif%}
+                        {% endwith%}
                         
                         </div>
                         </div>

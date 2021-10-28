@@ -88,15 +88,15 @@
                       
                         <center><h4><br/>Complete todos los campos para crear el curso</h4> </center>
                      
-                        <form action="" method="get" name="formCovid" onsubmit="" class="formulario">  
+                        <form action="{{ url_for('registro_curso')}}" method="post" name="formularioCurso" onsubmit="" class="formulario">  
                         <div class="contenedor-campo">
                         <div class="campo">
                             <label> Nombre del curso </label>
                           <input
                             type="text"
                             size="35"
-                            name="name"
-                            id="name"
+                            name="nombreCurso"
+                            id="nombreCurso"
                             autofocus
                             minlength="3"
                             maxlength="30"
@@ -113,18 +113,6 @@
                             id="CodigoCurso"
                             required
                             placeholder="Codigo del curso"
-                            />
-                        </div>
-
-                        
-                        <div class="campo">
-                            <label> Numero de creditos: </label>
-                            <input
-                            type="number"   
-                            name="NumeroCreditos"
-                            id="NumeroCreditos"
-                            required
-                            placeholder="Numero de creditos"
                             />
                         </div>
 
@@ -161,7 +149,16 @@
                             <button class="btn-primary" type="submit">Crear usuario</button>
                             <button class="btn-primary" type="reset">Cancelar</button>
                         </center>
-                        
+                        {%with messages = get_flashed_messages() %}
+                        {% if messages%}
+                        {% for message in messages %}
+                        <p>
+                          {{message}}
+                        </p>
+                        {% endfor%}
+                        {% endif%}
+                        {% endwith%}
+
                         </div>
                         </div>
         <!-- La columna actividades abarca el calendario y la lista de actividades-->

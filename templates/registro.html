@@ -87,8 +87,20 @@
                       
                       <center>
                         <h4><br/>Complete todos los campos para crear la cuenta</h4>
-                        <form action="" method="get" name="formCovid" onsubmit="">  
-                        <p>
+                        <form action="{{ url_for('registar')}}" method="post" name="formRegistro" >  
+                          <p>
+                            <input
+                              type="number"
+                              size="10"
+                              name="codigo"
+                              id="codigo"
+                              autofocus
+                              minlength="3"
+                              maxlength="30"
+                              required
+                              placeholder="codigo"
+                            /></p>
+                          <p>
                           <input
                             type="text"
                             size="35"
@@ -112,7 +124,7 @@
                           placeholder="Apellidos"
                         /></p>
                         <p style="font-weight: bold;">Tipo de documento: 
-                            <select name="documento">
+                            <select name="tipoDocumento">
             
                                 <option value="1">CC</option>
                                 
@@ -126,11 +138,27 @@
                             <input type="number" size="35" required name="num_doc" id="num_doc" placeholder="Numero de documento" >
                         </p>
                         <p>
+                          <input type="password" name="password" id="password" placeholder="Contraseña temporal" minlength="3" required>
+                      </p>
+                        <p>
                             <input type="email" name="mail" id="mail" placeholder="E-mail" minlength="3" required>
                         </p>
                         <p style="font-weight: bold;">Fecha de nacimiento:
                             <input type="date" name="fecha_nac" id="fecha_nac" required>
                         </p>
+
+                        <p>
+                          <input
+                            type="text"
+                            size="35"
+                            name="carrera"
+                            id="carrera"
+                            autofocus
+                            minlength="3"
+                            maxlength="30"
+                            required
+                            placeholder="carrera"
+                          /></p>
                         <p>
                           <p style="font-weight: bold;">Tipo de usuario 
                             <select name="TipoUsuario">
@@ -143,10 +171,21 @@
                                 
                                 </select>
                         </p>
+
                             <button class="btn-primary" type="submit">Crear usuario</button>
                             <button class="btn-primary" type="reset">Cancelar</button>
                         </p>
                         </center>
+
+                        {%with messages = get_flashed_messages() %}
+                        {% if messages%}
+                        {% for message in messages %}
+                        <p>
+                          {{message}}
+                        </p>
+                        {% endfor%}
+                        {% endif%}
+                        {% endwith%}
                     </div>
         <!-- La columna actividades abarca el calendario y la lista de actividades-->
                     </div>

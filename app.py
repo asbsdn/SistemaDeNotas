@@ -1,15 +1,78 @@
-from flask import Flask
+from flask import Flask, request, render_template,flash
 from flask import render_template as render
 from flask import redirect
+from sqlite3 import Error
+import os
+
+from forms import Login
+import gestorDB 
+import utils
 
 app = Flask(__name__)
-
+app.secret_key = os.urandom( 24 )
 sesion_iniciada = False;
 
 @app.route("/", methods=['GET', 'POST'])
 def inicio():
     #Pagina index para inciar sesión
     return render("index.html")
+
+#login - conexión base de datos 
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    try:
+        if request.method == 'POST':
+            db = gestorDB.get_db()
+            error = None
+            username = request.form['codigo']
+            password = request.form['password']
+            rol = request.form['rol']
+            
+
+            if not username:
+                error = 'Debes ingresar el usuario'
+                flash( error )
+                return render_template( 'index.html' )
+
+            if not password:
+                error = 'Contraseña requerida'
+                flash( error )
+                return render_template( 'index.html' )
+            
+            NombreRol=""
+            if rol =="1":
+                NombreRol="estudiante"
+            elif rol =="2":
+                NombreRol ="profesor"
+            else:
+                NombreRol="administrador"
+
+            user = db.execute(
+                'SELECT * FROM '+NombreRol+' WHERE  ID = ? AND password = ? ', (username, password)
+            ).fetchone()
+
+            print(rol,NombreRol)
+            # print(user)
+
+            if user is None:
+                error = 'Usuario o contraseña inválidos'
+            else:
+
+                home =''
+                
+                if rol == "1":
+                    home='homeEstudiante'
+                elif rol == "2":
+                    home ='homeProfesor'
+                else:
+                   home='dashboard'
+                    
+                return redirect(home)
+
+            flash( error )
+        return render_template( 'index.html' )
+    except:
+        return render_template( 'index.html' )
 
 @app.route('/recordarPass', methods=['GET'])
 def recordar_pass():
@@ -65,6 +128,146 @@ def crearAsignatura():
 @app.route("/informacionAdministrador", methods=['GET', 'POST'])
 def informacionAdministrador():
     return render("informacionAdministrador.html")
+
+#Integración de registro de usuarios 
+@app.route( '/registar', methods=('GET', 'POST') )
+def registar():
+    try:
+        if request.method == 'POST':
+            print('ENTRA')
+            codigo = request.form['codigo']
+            name = request.form['name']
+            apellido = request.form['apellido']
+            tipoDocumento=request.form['tipoDocumento']
+            documento = request.form['num_doc']
+            password = request.form['password']
+            email = request.form['mail']
+            fechaNacimiento= request.form['fecha_nac']
+            carrera = request.form['carrera']
+            tipoUsuario = request.form['TipoUsuario']
+
+            error = None
+            db = gestorDB.get_db()
+
+            if not name:
+                error = 'Debes ingresar el nombre del usuario'
+                flash( error )
+                return render_template( 'registro.html' )
+            
+            if not apellido:
+                error = 'Debes ingresar el nombre del usuario'
+                flash( error )
+                return render_template( 'registro.html' )
+
+            if not utils.isPasswordValid( password ):
+                error = 'La contraseña debe contenir al menos una minúscula, una mayúscula, un número y 8 caracteres'
+                flash( error )
+                print(error)
+                return render_template( 'registro.html' )
+
+            if not utils.isEmailValid( email ):
+                error = 'Correo invalido'
+                flash( error )
+                print(error)
+                return render_template( 'registro.html' )
+
+            # if db.execute( 'SELECT ID FROM estudiante WHERE email = ?', (email) ).fetchone() is not None:
+            #     error = 'El correo ya existe'.format( email )
+            #     flash( error )
+            #     return render_template( 'auth/registro.html' )
+
+            print(error)
+            print("ENTRAAA")
+            strsql = "insert into estudiante (codigo, password,tipoDeDocumento, cedula, nombres, apellidos, email, fechaDeNacimiento, carrera) values("+codigo+",'"+password+"',"+tipoDocumento+","+documento+", '"+name+"', '"+apellido+"', '"+email+"', "+fechaNacimiento+",'"+carrera+"' )"
+            db.execute(strsql)
+            db.commit()
+
+            flash( 'Usuario creado' )
+            return render_template( 'registro.html' )
+        return render_template( 'registro.html' )
+    except:
+        return render_template( 'registro.html' )
+#Fin de creacion de usuarios 
+
+#Integración de la creación de asignatura
+@app.route( '/registro_asignatura', methods=('GET', 'POST') )
+def registro_asignatura():
+    try:
+        if request.method == 'POST':
+            print('ENTRA')
+            name = request.form['nombre_asignatura']
+            codigo = request.form['CodigoAsignatura']
+            creditos = request.form['NumeroCreditos']
+            maxEstudiante = request.form['MaxEstudiante']
+            detalle= request.form['DetalleAsignatura']
+
+            error = None
+            db = gestorDB.get_db()
+            if not utils.isUsernameValid(name):
+                error = "El nombre debe ser alfanumerico o incluir solo '.','_','-'"
+                flash( error )
+                return render_template( 'crearAsignatura.html' )
+
+            
+            if not detalle:
+                error = 'Debes ingresar una descripción'
+                flash( error )
+                return render_template( 'crearAsignatura.html' )
+
+
+            # if db.execute( 'SELECT codigo FROM asignatura WHERE codigo = ?', (codigo) ).fetchone() is not None:
+            #     error = 'El codigo ya existe'.format( codigo )
+            #     flash( error )
+
+                return render_template( 'auth/crearAsignatura.html' )
+            print(error)
+            strsql = "insert into asignatura (codigo, nombre, creditos,detalle) values("+codigo+", '"+name+"', "+creditos+", '"+detalle+"' )"
+            db.execute(strsql)
+            db.commit()
+
+            flash( 'Asignatura creada' )
+            return render_template( 'crearAsignatura.html' )
+        return render_template( 'crearAsignatura.html' )
+    except:
+        return render_template( 'crearAsignatura.html' )
+#Fin de creacion de ruta del formulario de creación de asignaturas
+
+#Creacion de cursos 
+@app.route( '/registro_curso', methods=('GET', 'POST') )
+def registro_curso():
+    try:
+        if request.method == 'POST':
+            print('ENTRA')
+            name = request.form['nombreCurso']
+            codigo = request.form['CodigoCurso']
+            profesorAsociado = request.form['ProfesorCurso']
+            maxEstudiante = request.form['MaxEstudiante'] 
+            asignatura = request.form['AsignaturaAsociada']
+
+            error = None
+            db = gestorDB.get_db()
+            if not utils.isUsernameValid(name):
+                error = "El nombre debe ser alfanumerico o incluir solo '.','_','-'"
+                flash( error )
+                return render_template( 'crearCursos.html' )
+
+
+            # if db.execute( 'SELECT codigo FROM asignatura WHERE codigo = ?', (codigo) ).fetchone() is not None:
+            #     error = 'El codigo ya existe'.format( codigo )
+            #     flash( error )
+
+             #   return render_template( 'auth/crearAsignatura.html' )
+            #print(error)
+            strsql = "insert into curso (codigo, nombre, asignatura,maxEstudiante,profesor) values("+codigo+", '"+name+"', '"+asignatura+"',"+maxEstudiante+", '"+profesorAsociado+"' )"
+            db.execute(strsql)
+            db.commit()
+
+            flash( 'Curso creada' )
+            return render_template( 'crearCursos.html' )
+        return render_template( 'crearCursos.html' )
+    except:
+        return render_template( 'crearCursos.html' )
+#Fin de creacion de ruta de creacion de curso
 
 #PAGINAS DE PROFESOR-------------------------------------------------------------------------------------
 
